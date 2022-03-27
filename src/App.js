@@ -1,5 +1,6 @@
 import Home from "./Home";
 import PostPage from "./PostPage";
+import Edit from "./Edit";
 import { Route } from "react-router-dom";
 
 function App() {
@@ -10,6 +11,9 @@ function App() {
       </Route>
       <Route path="/PostPage" exact>
         <PostPage />
+      </Route>
+      <Route path="/Edit" exact>
+        <Edit />
       </Route>
     </div>
   );
