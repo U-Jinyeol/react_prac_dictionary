@@ -1,91 +1,91 @@
-import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import React from "react";
 import styled from "styled-components";
+
+import {
+  BiCommentEdit,
+  BiCommentX,
+  BiCommentCheck,
+  BiPlusMedical,
+} from "react-icons/bi";
+
+import "./Home.css";
+import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { loadPostFB } from "./redux/modules/post";
+import {
+  loadPostFB,
+  deletePost,
+  deletePostFB,
+  checkPostFB,
+} from "./redux/modules/post";
 
 function Home() {
   const dispatch = useDispatch();
   const history = useHistory();
   const post = useSelector((state) => state.post.list); //리덕스 값 불러오는
-  console.log(post);
 
   React.useEffect(() => {
-    dispatch(loadPostFB());
+    dispatch(loadPostFB(), deletePostFB(), checkPostFB());
   }, []);
 
   return (
     <div className="Home">
-      <Nav>
-        <h1>신조어 단어장</h1>
-      </Nav>
-      <CardWrap>
+      <div className="HomeHead">
+        <h1>신조어 사전</h1>
+      </div>
+      <div className="cardsWrap">
         {post.map((post, i) => {
-          console.log(post);
           return (
-            <Card key={i}>
-              <VocaTitle>{post.title}</VocaTitle>
-              <h3>{post.mean}</h3>
-              <h4>{post.ex}</h4>
-              <button
+            <Wrap post={post} key={i} className="cardBox">
+              <BiCommentX
                 onClick={() => {
-                  history.push("/Edit");
+                  console.log("삭제하기");
+                  dispatch(deletePostFB(post.id));
                 }}
-              >
-                수정하기
-              </button>
-            </Card>
+                size="24"
+                color="#F08080 "
+                className="deleteBtn"
+              />
+              <BiCommentEdit size="24" color="#5D6D7E" className="editBtn" />
+              <BiCommentCheck
+                onClick={() => {
+                  console.log("완료하기");
+                  dispatch(checkPostFB(post.id));
+                }}
+                size="24"
+                color="#5D6D7E"
+                className="checkBtn"
+              />
+              <h1>"{post.title}"</h1>
+              <hr></hr>
+              <p>뭔말임?</p>
+              <h3>{post.mean}</h3>
+              <p>이럴 때 씁니다!</p>
+              <h4>{post.ex}</h4>
+            </Wrap>
           );
         })}
-      </CardWrap>
-      <PostBtn
+      </div>
+      <button
+        className="button is-success postBtn"
         onClick={() => {
           history.push("/PostPage");
         }}
       >
-        신조어 등록
-      </PostBtn>
+        <BiPlusMedical />
+      </button>
     </div>
   );
 }
 
-const Nav = styled.div`
-  background-color: black;
-  color: white;
-  height: 100px;
-  line-height: 100px;
-  margin-bottom: 50px;
-`;
-
-const CardWrap = styled.div`
-  color: black;
-`;
-
-const Card = styled.div`
-  border: 1px solid black;
-  width: 200px;
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  float: left;
-  margin: 0 10px 30px 10px;
-`;
-
-const VocaTitle = styled.h2`
-  font-size: 30px;
-`;
-
-const PostBtn = styled.button`
-  background-color: black;
-  border: none;
-  color: white;
-  height: 40px;
-  width: 100px;
-  margin-bottom: 20px;
-  &:hover {
-    box-shadow: 0px 0px 6px black;
-    font-size: 1rem;
-    font-weight: 900;
+const Wrap = styled.div`
+  background-color: ${(post) =>
+    post.post.bool === true ? "#94BCAA" : "white"};
+  border: 1px solid ${(post) => (post.post.bool === true ? "#48c78e" : "#ddd")};
+  h1,
+  h3,
+  h4,
+  p {
+    color: ${(post) => post.post.bool === true && "white"};
   }
 `;
 

@@ -3,13 +3,13 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDTp0IrVsspm1nPBqyUQkUJhqjOgj2Vg8w",
-  authDomain: "sparta-react-basic-22569.firebaseapp.com",
-  projectId: "sparta-react-basic-22569",
-  storageBucket: "sparta-react-basic-22569.appspot.com",
-  messagingSenderId: "1089512299892",
-  appId: "1:1089512299892:web:1dccaab6460c784c9de021",
-  measurementId: "G-6HGSWLQ6P0",
+  apiKey: "AIzaSyB2VzAJqO7bft1GWvPJyYc5ybS-f8UbciY",
+  authDomain: "react-prac-209a8.firebaseapp.com",
+  projectId: "react-prac-209a8",
+  storageBucket: "react-prac-209a8.appspot.com",
+  messagingSenderId: "254430638075",
+  appId: "1:254430638075:web:11fb026a5058e73194e55e",
+  measurementId: "G-BGS76EYCE8",
 };
 
 initializeApp(firebaseConfig);

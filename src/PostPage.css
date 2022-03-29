@@ -1,0 +1,48 @@
+@font-face {
+  font-family: "establishRoomNo703OTF";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/establishRoomNo703OTF.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.Posthead {
+  width: 100%;
+  height: 160px;
+  text-align: center;
+  line-height: 160px;
+  color: white;
+  background-color: #48c78e;
+  margin: 0 0 40px 0;
+}
+
+.Posthead > h1 {
+  display: inline-block;
+  font-size: 4rem;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.box {
+  max-width: 600px;
+  width: 95%;
+  margin: 0 auto 0 auto;
+}
+
+.CheckBtn {
+  font-family: establishRoomNo703OTF;
+  margin: 20px 10px 0 0;
+}
+
+.CheckBtn:hover {
+  box-shadow: 0px 0px 4px black;
+}
+
+.BackBtn {
+  font-family: establishRoomNo703OTF;
+  margin: 20px 10px 0 0;
+}
+
+.BackBtn:hover {
+  box-shadow: 0px 0px 4px black;
+}

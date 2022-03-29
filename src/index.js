@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "./index.css"; //index.css 파일 사용(css적용)
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 //리덕스를 가져오는 import
@@ -8,10 +9,10 @@ import { Provider } from "react-redux";
 import store from "./redux/configStore";
 
 ReactDOM.render(
-  <BrowserRouter>
-    <Provider store={store}>
+  <Provider store={store}>
+    <BrowserRouter>
       <App />
-    </Provider>
-  </BrowserRouter>,
+    </BrowserRouter>
+  </Provider>,
   document.getElementById("root")
 );
