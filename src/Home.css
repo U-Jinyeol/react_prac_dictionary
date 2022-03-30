@@ -4,7 +4,7 @@
   text-align: center;
   line-height: 160px;
   color: white;
-  background-color: #48c78e;
+  background-color: #8596e5;
   margin: 0 0 40px 0;
 }
 
@@ -13,6 +13,11 @@
   font-size: 4rem;
   vertical-align: middle;
   margin: 0;
+}
+
+.HomeHead > img {
+  display: inline-block;
+  width: 180px;
 }
 
 .cardsWrap {
@@ -69,7 +74,7 @@
 }
 
 .cardBox > h1 {
-  color: #48c78e;
+  color: #8596e5;
   margin-top: 10px;
   display: inline-block;
   position: relative;

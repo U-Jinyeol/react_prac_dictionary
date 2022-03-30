@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
+import { AtomSpinner } from "epic-spinners";
+
 import {
   BiCommentEdit,
   BiCommentX,
@@ -31,6 +33,7 @@ function Home() {
     <div className="Home">
       <div className="HomeHead">
         <h1>신조어 사전</h1>
+        <img src="https://item.kakaocdn.net/do/ffdfda1647c79a784040a6dad5b35d3f616b58f7bf017e58d417ccb3283deeb3" />
       </div>
       <div className="cardsWrap">
         {post.map((post, i) => {
@@ -79,8 +82,8 @@ function Home() {
 
 const Wrap = styled.div`
   background-color: ${(post) =>
-    post.post.bool === true ? "#94BCAA" : "white"};
-  border: 1px solid ${(post) => (post.post.bool === true ? "#48c78e" : "#ddd")};
+    post.post.bool === true ? "#FEC22E " : "white"};
+  border: 1px solid ${(post) => (post.post.bool === true ? "#ddd" : "#ddd")};
   h1,
   h3,
   h4,
