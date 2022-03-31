@@ -48,7 +48,15 @@ function Home() {
                 color="#F08080 "
                 className="deleteBtn"
               />
-              <BiCommentEdit size="24" color="#5D6D7E" className="editBtn" />
+              <BiCommentEdit
+                onClick={() => {
+                  console.log("수정페이지");
+                  history.push(`/Edit/${i}`);
+                }}
+                size="24"
+                color="#5D6D7E"
+                className="editBtn"
+              />
               <BiCommentCheck
                 onClick={() => {
                   console.log("완료하기");

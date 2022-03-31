@@ -12,7 +12,7 @@ function App() {
       <Route path="/PostPage" exact>
         <PostPage />
       </Route>
-      <Route path="/Edit" exact>
+      <Route path="/Edit/:post_index" exact>
         <Edit />
       </Route>
     </div>

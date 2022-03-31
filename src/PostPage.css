@@ -6,17 +6,17 @@
   font-style: normal;
 }
 
-.Posthead {
+.HomeHead {
   width: 100%;
   height: 160px;
   text-align: center;
   line-height: 160px;
   color: white;
-  background-color: #48c78e;
+  background-color: #8596e5;
   margin: 0 0 40px 0;
 }
 
-.Posthead > h1 {
+.HomeHead > h1 {
   display: inline-block;
   font-size: 4rem;
   vertical-align: middle;

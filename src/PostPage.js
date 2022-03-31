@@ -2,19 +2,10 @@ import React from "react";
 import "./PostPage.css";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { createPost, loadPostFB, addPostFB } from "./redux/modules/post";
+import { addPostFB } from "./redux/modules/post";
 //파이어베이스 db 연결 확인
 import { db } from "./firebase";
 //콜렉션은 만들어준거 가져오는거, 겟독은 한개, 겟독스는 여러개, 애드독은 추가, 업데이트독은 수정,어떤 도큐먼트를 수정할지를 불러와야 해서 doc도 임포트,딜리트독은 삭제 )
-import {
-  collection,
-  getDoc,
-  getDocs,
-  addDoc,
-  updateDoc,
-  doc,
-  deleteDoc,
-} from "firebase/firestore";
 
 function PostPage() {
   const history = useHistory();
@@ -60,8 +51,9 @@ function PostPage() {
 
   return (
     <div>
-      <div className="Posthead">
+      <div className="HomeHead">
         <h1>신조어 사전</h1>
+        <img src="https://item.kakaocdn.net/do/ffdfda1647c79a784040a6dad5b35d3f616b58f7bf017e58d417ccb3283deeb3" />
       </div>
       <form className="box">
         <div className="field">

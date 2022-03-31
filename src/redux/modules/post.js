@@ -8,6 +8,7 @@ import {
   addDoc,
   updateDoc,
   deleteDoc,
+  setDoc,
 } from "firebase/firestore";
 
 // Actions 타입 "모듈명/어떤액션"
@@ -21,9 +22,9 @@ const initialState = {
   list: [],
 };
 
-// Action Creators
-// 키:밸류 값이 같으면 밸류값을 생략할 수 있음
-// ex. weidget:widget => widget
+export function updatePost(post) {
+  return { type: UPDATE, post };
+}
 
 export function loadPost(post_list) {
   console.log("액션 로드");
@@ -44,6 +45,26 @@ export function checkPost(post_index) {
   console.log("액션 체크");
   return { type: UPDATE, post_index };
 }
+
+//middlewarese
+export const updatePostFB = (new_post) => {
+  console.log(new_post);
+  return async function (dispatch, getState) {
+    const docRef = await doc(db, "mydictionary", new_post.id);
+    console.log(new_post.mean);
+    updateDoc(docRef, {
+      title: new_post.title,
+      mean: new_post.mean,
+      ex: new_post.ex,
+    });
+
+    // const _post_list = getState().post.list;
+    // const post_index = _post_list.findIndex((b) => {
+    //   return b.id === post_id;
+    // });
+    // dispatch(checkPost(post_index));
+  };
+};
 
 //middlewarese
 export const loadPostFB = () => {
@@ -153,6 +174,7 @@ export default function reducer(state = initialState, action = {}) {
     //   //초기값 list와 같은 형태로 수정
     //   return { list: new_post_list };
     // }
+
     default:
       return state;
   }
