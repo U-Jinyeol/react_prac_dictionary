@@ -31,11 +31,6 @@ function Edit() {
     history.push("/");
   }
 
-  // const onChange = (e) => {
-  //   console.log(e.target.value);
-  //   return onreset(e.target.value);
-  // };
-
   return (
     <div>
       <div className="HomeHead">
