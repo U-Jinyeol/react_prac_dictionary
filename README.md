@@ -1,4 +1,4 @@
-# 신조어 카
+# 신조어 카드
 
 React에서 redux, redux-thunk, firebase를 통해 단어를 등록,수정,삭제 기능을 사용했다.
 
